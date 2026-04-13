@@ -4,7 +4,7 @@ export default async function handler(req, res) {
 
   try {
     const response = await fetch(
-      `https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/address?city=${city}&state=${state}`,
+      `https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/snapshot?city=${city}&state=${state}`,
       {
         headers: {
           apikey: ATTOM_API_KEY,
