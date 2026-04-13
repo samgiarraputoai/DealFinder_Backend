@@ -1,9 +1,10 @@
 export default async function handler(req, res) {
   const ATTOM_API_KEY = process.env.ATTOM_API_KEY;
+  const { city = "Phoenix", state = "AZ" } = req.query;
 
   try {
     const response = await fetch(
-      "https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/basicprofile?city=Phoenix&state=AZ",
+      `https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/address?city=${city}&state=${state}`,
       {
         headers: {
           apikey: ATTOM_API_KEY,
